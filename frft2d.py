@@ -24,10 +24,11 @@ def frft2d(matrix, a = [0.7, 0.7]):
     """
     temp = numpy.zeros((matrix.shape[0], matrix.shape[1]), dtype = 'complex')
     for k in range(0, matrix.shape[0]):
-        temp[:, k] = frft(matrix[k, :] ,a[0])
+        temp[k, :] = frft(matrix[k, :] ,a[0])
     out = numpy.zeros((temp.shape[0], temp.shape[1]), dtype = 'complex')
     for m in range(0, temp.shape[1]):
-        out[:, m] = frft(temp[m, :], a[1])
+        out[:, m] = frft(temp[:, m], a[1])
+        
     return out
 
 
