@@ -133,4 +133,5 @@ def sincinterp(x):
         y[:2 * N],
         numpy.sinc(numpy.arange(-(2 * N - 3), (2 * N - 2)).T / 2),
     )
-return xint[2 * N - 3: -2 * N + 3]
+    
+    return xint[2 * N - 3: -2 * N + 3]
